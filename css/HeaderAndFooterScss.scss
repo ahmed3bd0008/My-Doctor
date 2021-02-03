@@ -1,0 +1,63 @@
+$bgColorLogo:rgb(0,255,255);
+$colorLogo:#00F;
+$LogoFontFamily:Arial;
+$navbarBgColor:rgb(95,158,160);
+$navbarColor:white;
+$sliderHeight:400px;
+$ArabicFont:"Times New Roman";
+.navBarMain{
+    background-color: $navbarBgColor;
+    padding: 0px;
+}
+.logo{
+    background-color: $bgColorLogo;
+    color: $colorLogo;
+}
+
+.logo{
+    span{
+        margin: 5px;
+        font-weight: bold;
+        font-family: $LogoFontFamily;
+    }
+}
+
+.navBarMain{
+    ul{
+        li{
+            a{
+                font-family: $ArabicFont;
+                font-weight: bold;
+                margin-left: 10px;
+                color: white;
+            }
+        }
+    }
+}
+
+.carousel-inner{
+    div{
+        img{
+            width: 100%;
+            height: $sliderHeight;
+        }
+    }
+}
+
+.arabicFont{
+    font-family: $ArabicFont;
+}
+
+a:hover{
+color: rgb(255, 240, 106);
+font-size: 20px;
+font-weight: bold;
+}
+
+.media{
+    a{
+        i{
+            margin-left: 15px;
+        }
+    }
+}
