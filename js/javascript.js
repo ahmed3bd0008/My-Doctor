@@ -52,7 +52,7 @@ async function openJsonFile() {
   result = await result.json()
   data = result;
   display(result)
-
+  uploadJsonFile(data2)
 }
 /////////////////////////////////////////
 ///////get id of doctor 
@@ -80,17 +80,22 @@ function displayDetails(obj) {
 
   let str = "";
   str += `<div class="card-body">`
-  str += `<div class="row justify-content-center bg-white" >`
+  str += `<div class="row justify-content-center bg-white" id="ttt">`
   str += ` <div class="col-2"><img src="img/person.jpg" class="img-thumbnail" alt="..."></div>`
+
+  //loop for day
+
   for (const iterator of obj.workday) {
     str += ` <div class="col-1">`
     str += `   <h6>${iterator}</h6>`
 
     var starthour = obj.start;
-    // str+=`<div class="col-1"></div>`
+
+    // loop for checkbox
+
     for (let i = 0; i < numberOfCheck(obj.start, obj.end, obj.wait); i++) {
 
-      str += ` <input class="form-check-input" type="checkbox" name="radioNoLabel" id="radioNoLabel1" value="${starthour}"aria-label="...">`
+      str += ` <input class="form-check-input" type="checkbox" name="radioNoLabel" id="${iterator + "," + convertNumToTime(starthour) + "," + 1}" value="${convertNumToTime(starthour)}"aria-label="...">`
       str += `<label class="mr-5">${convertNumToTime(starthour)}</label>`
 
       starthour += obj.wait
@@ -109,9 +114,10 @@ function displayDetails(obj) {
 
 
   str += `</h6>`
-  str += `<a href="#" class="btn btn-primary" id="1" onclick="doctordetails(1)">حجز</a>`
 
   str += ` </div>`
+  str += `<a href="#" class="btn btn-primary" id="1" onclick="GetSelected()" name="strtt[]">حجز</a>`
+
   str += `</div>`
   str += `</div>`
   reservationdiv.innerHTML = str
@@ -147,4 +153,44 @@ function convertNumToTime(number) {
   time = sign + hour + ':' + minute;
 
   return time;
+}
+
+/////////////////////////////////////////
+///get id
+
+function GetSelected() {
+  //Create an Array.
+  var selected = new Array();
+
+  //Reference the Table.
+  var tblFruits = document.getElementById("ttt");
+
+  //Reference all the CheckBoxes in Table.
+  var chks = tblFruits.getElementsByTagName("INPUT");
+
+  // Loop and push the checked CheckBox value in Array.
+  for (var i = 0; i < chks.length; i++) {
+    if (chks[i].checked) {
+      selected.push(chks[i].id);
+    }
+  }
+
+
+
+
+  //Display the selected CheckBox values.
+  alert(selected)
+};
+
+
+  const data2 = { username: 'example' };
+
+ 
+
+async function uploadJsonFile(data2) {
+  result = await fetch("./data/wait.json",{ method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),});
 }
