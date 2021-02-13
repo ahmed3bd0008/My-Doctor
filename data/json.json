@@ -65,32 +65,13 @@
         "stat_work":9,
         "end_work":12,
         "number_0f_hour_work":3,
-        "location":"",
+        "location":"اسيوط",
         "wait":0.5,
         "disc2":"",
         "service":["جراحات العظام والكسور","تضيق العمود الفقري","مشاكل العمود الفقرى"],
         "img":["clinic1.jpg","clinic2.jpg"],
         "start":9,
         "end":18
-    }
-    ,
-        {
-        "id": 4,
-        "name":"",
-        "disc" : "",
-        "type":"",
-        "pay":290,
-        "workday":["السبت","الاحد","الاثنين"],
-        "stat_work":9,
-        "end_work":12,
-        "number_0f_hour_work":9,
-        "location":"",
-        "wait":"نص ساعه",
-        "disc2":"",
-        "service":["جراحات العظام والكسور","تضيق العمود الفقري","مشاكل العمود الفقرى"],
-        "img":["clinic1.jpg","clinic2.jpg"],
-        "start":9,
-        "end":12
     }
     ,
         {

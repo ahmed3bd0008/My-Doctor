@@ -10,10 +10,12 @@ if (start) {
 var maindiv = document.getElementById('maindiv');
 ////////////////////////////////
 /////////display function
-var str = '';
-function display(obj) {
 
+function display(obj) {
+  var str = '';
+  let city = `<option selected>not select</option>`
   for (const iterator of obj) {
+    city = `option selected>${iterator.location}</option>`
     str += `<div class="row pt-3">`
     str += `<div class="col text-justify">`
     str += `<div class="card">`
@@ -179,18 +181,130 @@ function GetSelected() {
 
 
   //Display the selected CheckBox values.
-  alert(selected)
+ 
 };
 
 
-  const data2 = { username: 'example' };
+const data2 = { username: 'example' };
 
- 
+
 
 async function uploadJsonFile(data2) {
-  result = await fetch("./data/wait.json",{ method: 'POST', // or 'PUT'
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),});
+  result = await fetch("./data/wait.json", {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
 }
+//////////////////////////////////////////////////////////////////////////
+/////////array of المحافطات
+var locationName =
+  [
+    "المنيا", "القاهره", "اسيوط", "الجيزه", "الاسكندريه",
+  ]
+/////////////////////////////////////////////////////////////////////
+//////specialist
+var specilizetype =
+  [
+    "جراحه تجميل", "العظام", "قلب", "جراحه", "انف واذن وحنجرة"
+    , "اصابات ملاعب ومناظير مفاصل", "دكتور مخ واعصاب", "دكتور جلدية",
+    "دكتور اسنان", "  دكتور اطفال وحديثي الولادة", "  دكتور عظام  ",
+    "دكتور نساء وتوليد    ", "دكتور انف واذن وحنجرة ",
+    "دكتور نفسي ",
+  ]
+/////////////////////////////////////////////////////////////////
+///////function to display location
+var citylocation = document.getElementById("city")
+var city = `<option>city not select</option>`;
+for (const iterator of locationName) {
+  city += `<option id=${iterator}>${iterator}</option>`
+}
+citylocation.innerHTML = city;
+
+var doctorspecial = document.getElementById("specialty")
+var specialdoc = `<option>specialise not select</option>`
+for (const iterator of specilizetype) {
+  specialdoc += `<option>${iterator}</option>`
+}
+doctorspecial.innerHTML = specialdoc;
+
+//////////////////////////////////////////////////////////////////////////
+////////////////search
+var searchbtn = document.getElementById("searchbtn");
+function searchfun() {
+  search = data;
+ // alert(search)
+ ////txt
+  var doctorname = document.getElementById("doctorname").value
+  var search = data;
+  if (doctorname !== "") {
+    search = searchbyname(doctorname, search)
+    display(search)
+
+  }
+  ////specialist select
+  var specialty = document.getElementById("specialty")
+//get select option value
+  var opt = specialty.options[specialty.selectedIndex];
+  opt = opt.value
+  if (opt != "specialise not select") {
+    search = searchbyspecialist(opt, search)
+    display(search)
+  }
+  var city = document.getElementById("city");
+  var optcity = city.options[city.selectedIndex];
+  optcity = optcity.value
+   if (optcity != "city not select") {
+    //alert(search)
+    search = searchbycity(optcity, search)
+    display(search)
+  }
+  if (search.length==0) {
+    alert("ther is no result")
+  }
+}
+///////////by name
+function searchbyname(str, searchlist) {
+  let searchresult = new Array();
+  for (const iterator of searchlist) {
+
+    if (iterator.name.search(str) >= 0) {
+     // alert(iterator)
+
+      searchresult.push(iterator)
+
+    }
+  }
+  return searchresult
+}
+////////search by specialist
+function searchbyspecialist(str, searchlist) {
+  let searchresult = new Array();
+  for (const iterator of searchlist) {
+
+    if(iterator.type.search(str) >= 0) {
+      searchresult.push(iterator)
+
+    }
+  }
+ // alert(searchresult)
+  return searchresult
+}
+/////// search by city
+function searchbycity(str, searchlist)
+{
+  let searchresult = new Array();
+  //alert (searchlist)
+  for (const iterator of searchlist) {
+
+    if(iterator.location.search(str) >= 0) {
+     // alert(iterator)
+      searchresult.push(iterator)
+
+    }
+  }
+  return searchresult
+}
+/////// search 
