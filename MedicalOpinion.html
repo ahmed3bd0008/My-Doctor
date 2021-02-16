@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medica Information</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/HeaderAndFooterStyle.css">
+    <link rel="stylesheet" href="css/MedicalOpinionStyle.css">
+    <script type="text/javascript" src="data/MedcalOpenionData.json"></script>
+    <script type="text/javascript" src="abc.json"></script>
+    <!-- <script type="text/javascript" >
+        function load() {
+            var mydata = JSON.parse(data);
+            alert(mydata.length);
+
+            var div = document.getElementById('JsonData');
+
+            for(var i = 0;i < mydata.length; i++)
+            {
+                div.innerHTML = div.innerHTML + "<p class='inner' id="+i+">"+ mydata[i].name +"</p>" + "<br>";
+            }
+        }
+        load();
+    </script> -->
+    <!-- <script>
+        $(function() {
+       var people = [];
+       $.getJSON('MedcalOpenionData.json', function(data) {
+           $.each(data.person, function(i, f) {
+              var tblRow = "<tr>" + "<td>" + f.illName + "</td>" +
+               "<td>" + f.DoctorName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
+               $(tblRow).appendTo("#userdata tbody");
+         });
+       });
+    });
+    </script> -->
+</head>
+<body onload="load();" style="background-color: #DDD;">
+    <!-- Header -->
+     <!-- Nav Bar -->
+     <section class="container-flue">
+        <nav class="navbar navbar-expand-md navbar-light navBarMain">
+            <!-- logo -->
+            <a href="Home.html" class="navbar-brand logo">
+                <span> MY-DOCTOR </span>
+            </a>
+            <!-- btn menu -->
+            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navBarMain" id="menu">
+                <ul class="navbar-nav" >
+                    <li class="nav-item">
+                        <a href="Home.html" class="nav-link"  style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="About.html" class="nav-link"  style="color: white;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Contact.html" class="nav-link"  style="color: white;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="MedicalInfo.html" class="nav-link"  style="color: white;">Medical Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="MedicalOpinion.html" class="nav-link"  style="color: white;">Medical Opinions</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse navBarMain" style="float: right;" id="menu">
+                <ul class="navbar-nav" >
+                    <li class="nav-item">
+                        <a href="Login.html" class="nav-link"  style="color: white;">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="CreateDoctorAccount.html" class="nav-link"  style="color: white;">Join As Doctor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="CreatePatientAccounthtml" class="nav-link"  style="color: white;">Join As Patient</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+     <!-- Menu -->
+     <section class="slider">
+        <div id="slider" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#slider" data-slide-to="0" class="active"></li>
+                <li data-target="#slider" data-slide-to="1"></li>
+                <li data-target="#slider" data-slide-to="2"></li>
+                <li data-target="#slider" data-slide-to="3"></li>
+                <li data-target="#slider" data-slide-to="4"></li>
+                <li data-target="#slider" data-slide-to="5"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/23426/_next/static/images/homecovernewen3-eg-en.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.psychiatry-house.com//media/disease/doctor22.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/23426/_next/static/images/homecovernewen4-eg.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/originals/fd/82/eb/fd82ebbfcf402b740a5c96ba61701081.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.webeyeclinic.com/sites/default/files/styles/facebook_og_image/public/2020-04/%D8%A7%D8%B3%D8%A3%D9%84%20%D8%B7%D8%A8%D9%8A%D8%A8%20%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86_1.jpg?h=e8591f63&itok=t034_p3c">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.swissdnalysis.ch/wp-content/uploads/2019/02/services-paralax-1.jpg" >
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#slider" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#slider" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="containter con row">
+        <!-- display result -->
+        <section class="col-sm-8">  
+            <article class="artcl" style="overflow:auto;">
+                <div class="illName">
+                    <header>Covid 19 - كورنا</header>
+                </div>
+                <!-- doctor 1 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 2 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 3 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+            </article>
+            <article class="artcl" style="overflow:auto;">
+                <div class="illName">
+                    <header>Covid 19 - كورنا</header>
+                </div>
+                <!-- doctor 1 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 2 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 3 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+            </article>
+            <article class="artcl" style="overflow:auto;">
+                <div class="illName">
+                    <header>Covid 19 - كورنا</header>
+                </div>
+                <!-- doctor 1 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 2 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 3 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+            </article>
+            <article class="artcl" style="overflow:auto;">
+                <div class="illName">
+                    <header>Covid 19 - كورنا</header>
+                </div>
+                <!-- doctor 1 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 2 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+                <!-- doctor 3 -->
+                <div class="comments">
+                    <!-- doctor Name -->
+                    <div class="doctorName">
+                        <b><label>Ali Mohmmed</label></b>
+                    </div>
+                    <!-- doctor comment -->
+                    <div class="doctorComment">
+                        comment comment comment comment comment comment comment comment comment 
+                        comment comment comment comment comment comment comment comment comment 
+                    </div>
+                </div>
+            </article>
+        </section>
+        
+        <section class="col-sm-4">
+            <!-- search -->
+            <article class="artcl">
+                <div class="form1">
+                    <p class="pargraphSide">
+                        here find the best result for your question about your illness becouse the best doctor only can answer for question
+                        and this help you in safe your self from any illness without listen to any one does not joined to medical 
+                    </p>
+                    <form>
+                        <input type="search" name="txtSearch" class="form-control txt">
+                        <button class="btn btn-outline-primary">Search</button>
+                    </form>
+                </div>
+                <div class="form1">
+                    <p class="pargraphSidep2">
+                        here you can put your question if you don't find answer and the doctors will answer on your question
+                    </p>
+                    <form>
+                        <input type="text" name="txtGiveQuestion" class="form-control txt">
+                        <button class="btn btn-outline-primary">Send Your Question</button>
+                    </form>
+                </div>
+            </article>
+            <article class="artcl" style="margin-top: 30px;">
+                <div class="form1">
+                    <p class="pargraphSide">
+                        If you are doctor ? you can join us 
+                    </p>
+                    <form>
+                        <button class="btn btn-outline-primary">Join as Doctor</button>
+                    </form>
+                </div>
+                <div class="form1">
+                    <p class="pargraphSidep2">
+                        If You are Patient ? and find to best doctor <br>
+                        you can join us and create account as a patient and follow us
+                    </p>
+                    <form>
+                        <button class="btn btn-outline-primary">Join as Patient</button>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </section>
+      <!-- Footer -->
+    <section class="container-flue" style="color: white;">
+        <footer class="footer" style="padding-top: 10px; height: 170px; background-color: teal">
+            <div class="row" style="width: 99%;">
+                <div class="col offset-1">
+                    <div>
+                        <h1 style="margin-top:1px ;color: yellow;">MY_DOCTOR</h1>
+                        <p style="margin-bottom: 0px;">Minya, NY 535022 Egypt</p>
+                        <p style="margin-bottom: 0px;"><b>Phone: </b><label>+201128779841</label></p>
+                        <p><b>Email: </b><label>MY_DOCTOR@gmail.com</label></p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <h4 style="display: flex;margin-left: 40px;margin-top: 20px;">Useful Link</h4>
+                        <ul style="list-style: none;">
+                            <li style="display: flex;">
+                                <a href="Home.html">Home</a>
+                            </li>
+                            <li style="display: flex;">
+                                <a href="About,html">About</a>
+                            </li>
+                            <li style="display: flex;">
+                                <a href="Contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="margin-top: 20px;">
+                        <div style="margin: 10px;">
+                            Find us on social media.
+                        </div>
+                        <div class="media" style="margin: 10px;">
+                            <a href="#"><i class="fa fa-facebook" ></i></a>
+                            <a href="#"><i class="fa fa-instagram" ></i></a>
+                            <a href="#"><i class="fa fa-twitter" ></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                        <div style="margin: 10px;">
+                            Powred by <span style="color: rgb(243, 230, 158);">MY-DOCTOR</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="ourService">
+                        <h4 style="margin-left: 40px;margin-top: 20px;">Our Services</h4>
+                        <ul style="list-style: none;">
+                            <li>
+                                <a href="#">Medical opinions</a>
+                            </li>
+                            <li>
+                                <a href="#">Medical Info</a>
+                            </li>
+                            <li>
+                                <a href="#">Search on Doctor</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <br>
+    </section>
+</body>
+</html>
