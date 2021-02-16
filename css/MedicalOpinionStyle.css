@@ -1,0 +1,80 @@
+.con{
+    margin: 20px;
+    box-sizing: border-box;
+}
+.artcl{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 20px 20px 0px 0px;
+    background-color: white;
+    margin: 10px;
+    box-sizing: border-box;
+}
+.artcl div{
+    box-sizing: border-box;
+}
+.illName{
+    background-color: teal;
+    text-align: center;
+    height: 50px;
+}
+.illName header{
+    font-family: "Times New Romans";
+    font-weight: bolder;
+    font-size: 35px;
+}
+.comments{
+    background-color: #AAA;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.doctorName{
+    text-align: right;
+    color: teal;
+}
+.doctorComment{
+    /* border: 1px solid teal; */
+    text-align: right;
+    padding:0px 5px 0px 5px;
+}
+.form1{
+    height: auto;
+    margin-bottom: 15px;
+}
+.form1 form input[text]{
+    box-sizing: border-box;
+    display: block;
+    width: 90%;
+    margin-left: 40px;
+}
+.txt{
+    box-sizing: border-box;
+    width: 80%;
+    margin: 30px 20px 10px 20px;
+}
+
+.form1 form button{
+    width: 80%;
+    margin-left: 20px;
+    box-sizing: border-box;
+}
+
+.pargraphSide{
+    /* margin: 20px 0px 0px 10px; */
+    font-family: "Times New Romans";
+    background-color: teal;
+    border-radius: 20px 20px 0px 0px;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+.pargraphSidep2{
+    font-family: "Times New Romans";
+    background-color: teal;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
